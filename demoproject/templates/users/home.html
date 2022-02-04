@@ -1,0 +1,21 @@
+<body bgcolor="DarkOrange">
+<style type = "text/css">
+div {
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}</style>
+<center><h1>Code Gurukul User Authentication App</h1>
+{% if user.is_authenticated %}
+    <div class="alert alert-success" role="alert">
+              <h3>Welcome {{ user.username }}!</h3>
+        <a href="{% url 'logout' %}">Logout?</a>
+    </div>
+{% else %}
+    <div class="alert alert-success" role="alert">
+        <h3>Welcome!</h3>
+        <a href="{% url 'register' %}">Signup</a>
+        <a href="{% url 'login' %}">Login</a>
+    </div></center></body>
+{% endif %}
